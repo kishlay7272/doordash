@@ -55,7 +55,8 @@ axios(config)
 async function run()
 {
   let token=await getToken();
-   await getOrders(token);
+  console.log(c);
+  //  await getOrders(token);
 }
 run();
 

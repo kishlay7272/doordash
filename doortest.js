@@ -23,6 +23,6 @@ request(options, function (error, response) {
   console.log(response.statusCode);
   if(response.statusCode=="200")
   {
-    console.log(response.body);
+    console.log(response.body.data);
   }
 });

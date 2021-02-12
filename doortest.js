@@ -1,6 +1,15 @@
 var axios = require('axios');
 var data = '{"credentials":{"password":"3739","email":"4124187161bu@ipad.doordash.com"}}';
 let token;
+let syncingTime=60;
+async function delay(time) {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {
+
+          resolve();
+      }, time * 1000);
+  })
+}
 async function getToken() {
   try {
     let config = {
@@ -51,9 +60,10 @@ async function getOrders(token) {
 }
 async function run() {
   let token = await getToken();
-  console.log(token);
-  setInterval(getOrders(token),60000);
+  while(true)
+  {
+   await getOrders(token); 
+   await delay(syncingTime);
+  }
 }
 run();
-
-

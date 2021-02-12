@@ -52,7 +52,7 @@ async function getOrders(token) {
 async function run() {
   let token = await getToken();
   console.log(token);
-  await getOrders(token);
+  setInterval(getOrders(token),60000);
 }
 run();
 

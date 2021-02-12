@@ -27,7 +27,7 @@
 //   }
 // });
 var axios = require('axios');
-var data = '{"credentials":{"password":"3883","email":"9142171965bc@ipad.doordash.com"}}';
+var data = '{"credentials":{"password":"3739","email":"4124187161bu@ipad.doordash.com"}}';
 
 var config = {
   method: 'post',

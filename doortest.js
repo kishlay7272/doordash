@@ -2,6 +2,7 @@ var axios = require('axios');
 var data = '{"credentials":{"password":"3739","email":"4124187161bu@ipad.doordash.com"}}';
 let token;
 async function getToken(){
+  try{
 let config = {
   method: 'post',
   url: 'https://identity.doordash.com/api/v1/auth/token',
@@ -21,14 +22,13 @@ let config = {
   data : data
 };
 
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
+let response=await axios(config)
   return(response.data.token.token);
-})
-.catch(function (error) {
+}catch(error)
+{
   console.log(error);
-});
+}
+
 }
 
 async function getOrders(token)

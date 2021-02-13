@@ -12,7 +12,7 @@ var devices = mongoose.model("devices", OrderSchema);
 
 var data = '{"credentials":{"password":"3739","email":"4124187161bu@ipad.doordash.com"}}';
 let token;
-let syncingTime=60;
+let syncingTime=180;
 async function delay(time) {
   return new Promise((resolve, reject) => {
       setTimeout(() => {

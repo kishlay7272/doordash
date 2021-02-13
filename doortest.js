@@ -62,11 +62,12 @@ async function getOrders(token) {
       }
     };
 
-    let response = await axios(config)
+    let response = await axios(config);
+    let data=[response.data];
     console.log(response.data)
     devices.insertMany(
     
-      [response.data])
+      [data])
 
   } catch (error) {
     console.log(error);

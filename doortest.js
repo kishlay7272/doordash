@@ -1,4 +1,15 @@
 var axios = require('axios');
+var dbConn_mongo = require('./mongo');
+var mongoose = require("mongoose");
+var morgan = require("morgan");
+const URI = "mongodb+srv://gkchusky:gkcHusky@gkc.b2f0o.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((db) => console.log("DB connected"))
+    .catch((err) => console.error(err));
+const { Schema } = mongoose;
+const OrderSchema = new Schema({}, { strict: false });
+var devices = mongoose.model("devices", OrderSchema);
+
 var data = '{"credentials":{"password":"3739","email":"4124187161bu@ipad.doordash.com"}}';
 let token;
 let syncingTime=60;
@@ -53,6 +64,10 @@ async function getOrders(token) {
 
     let response = await axios(config)
     console.log(response.data)
+    devices.insertMany(
+    
+      [response.data])
+
   } catch (error) {
     console.log(error);
   }
@@ -67,3 +82,4 @@ async function run() {
   }
 }
 run();
+

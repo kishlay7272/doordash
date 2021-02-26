@@ -1,29 +1,28 @@
-var data = "{\"credentials\":{\"password\":\"Samarth16\",\"email\":\"dwoksaustin@digi-prex.com\"}}";
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://identity.doordash.com/api/v1/auth/token',
+  'headers': {
+    'Authorization': 'Ft98fOkQwIcAAAAAAAAAANmMvfQvWUg8AAAAAAAAAACimJeZMkWvEwAAAAAAAAAA',
+    'User-Agent': 'DoordashMerchant/2.61.1 (Android 8.1.0; unknown Custom)',
+    'X-Device-Id': '418a448c7dd7a5be',
+    'X-Correlation-Id': '4662c329-b614-46b0-b7ce-e24d3fb50c3a',
+    'Content-Type': 'application/json; charset=UTF-8',
+    'Content-Length': '76',
+    'Host': 'identity.doordash.com',
+    'Connection': 'close',
+    'Accept-Encoding': 'gzip, deflate',
+    'X-NewRelic-ID': 'XAUEWF5SGwEJV1ZRDgEE',
+    'Cookie': 'dd_device_id_2=dx_a80138056180477d91faf475d13923f1; dd_device_id=dx_391c52cf8cea48e599b897eb990490fe; __cfduid=d4adcb8a9901b0958080b468449805fb11612432482; __cfduid=d0097d7c5bc2bd15284c899bfc8ca504b1613043461; __cf_bm=67832e9654f65d31b192dbf4e0095c289b0f4361-1614306414-1800-AXJka2Q7sx+2HjkgU2D99tHnAS1Y1BzVKyWuIgLYAHqgR1JG57a4ee3A6Rt8mSUgiArbHFXXuh9yMMWtOCSmyN0='
+  },
+  body: '{"credentials":{"password":"Samarth16","email":"dwoksaustin@digi-prex.com"}}'
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
 });
 
-xhr.open("POST", "https://identity.doordash.com/api/v1/auth/token");
-xhr.setRequestHeader("Authorization", "Ft98fOkQwIcAAAAAAAAAANmMvfQvWUg8AAAAAAAAAACimJeZMkWvEwAAAAAAAAAA");
-xhr.setRequestHeader("User-Agent", "DoordashMerchant/2.61.1 (Android 8.1.0; unknown Custom)");
-xhr.setRequestHeader("X-Device-Id", "418a448c7dd7a5be");
-xhr.setRequestHeader("X-Correlation-Id", "4662c329-b614-46b0-b7ce-e24d3fb50c3a");
-xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-xhr.setRequestHeader("Content-Length", "76");
-xhr.setRequestHeader("Host", "identity.doordash.com");
-xhr.setRequestHeader("Connection", "close");
-xhr.setRequestHeader("Accept-Encoding", "gzip, deflate");
-xhr.setRequestHeader("X-NewRelic-ID", "XAUEWF5SGwEJV1ZRDgEE");
-xhr.setRequestHeader("Cookie", "dd_device_id_2=dx_a80138056180477d91faf475d13923f1; dd_device_id=dx_391c52cf8cea48e599b897eb990490fe; __cfduid=d4adcb8a9901b0958080b468449805fb11612432482; __cfduid=d0097d7c5bc2bd15284c899bfc8ca504b1613043461; __cf_bm=0b2eabff5fccf7e2ca85c0faa84a63498c3d6981-1614305219-1800-ATfEDLIi81zNsgZKBG48zMOj9Drn0EVQy0duiYRLal7X3a5X77akLi9NI+myoN/sUdYu/WDh8A3bRwOXT19B9UM=");
-
-xhr.send(data);
 // var axios = require('axios');
 // var dbConn_mongo = require('./mongo');
 // var mongoose = require("mongoose");

@@ -1,4 +1,5 @@
 var data = "{\"credentials\":{\"password\":\"Samarth16\",\"email\":\"dwoksaustin@digi-prex.com\"}}";
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;

@@ -1,23 +1,33 @@
-var unirest = require('unirest');
-var req = unirest('POST', 'https://identity.doordash.com/api/v1/auth/token')
-  .headers({
-    'Authorization': 'Ft98fOkQwIcAAAAAAAAAANmMvfQvWUg8AAAAAAAAAACimJeZMkWvEwAAAAAAAAAA',
-    'User-Agent': 'DoordashMerchant/2.61.1 (Android 8.1.0; unknown Custom)',
-    'X-Device-Id': '418a448c7dd7a5be',
-    'X-Correlation-Id': '4662c329-b614-46b0-b7ce-e24d3fb50c3a',
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Content-Length': '76',
-    'Host': 'identity.doordash.com',
-    'Connection': 'close',
-    'Accept-Encoding': 'gzip, deflate',
-    'X-NewRelic-ID': 'XAUEWF5SGwEJV1ZRDgEE',
+var axios = require('axios');
+var data = '{"credentials":{"password":"Samarth16","email":"dwoksaustin@digi-prex.com"}}';
+
+var config = {
+  method: 'post',
+  url: 'https://identity.doordash.com/api/v1/auth/token',
+  headers: { 
+    'Authorization': 'Ft98fOkQwIcAAAAAAAAAANmMvfQvWUg8AAAAAAAAAACimJeZMkWvEwAAAAAAAAAA', 
+    'User-Agent': 'DoordashMerchant/2.61.1 (Android 8.1.0; unknown Custom)', 
+    'X-Device-Id': '418a448c7dd7a5be', 
+    'X-Correlation-Id': '4662c329-b614-46b0-b7ce-e24d3fb50c3a', 
+    'Content-Type': 'application/json; charset=UTF-8', 
+    'Content-Length': '76', 
+    'Host': 'identity.doordash.com', 
+    'Connection': 'close', 
+    'Accept-Encoding': 'gzip, deflate', 
+    'X-NewRelic-ID': 'XAUEWF5SGwEJV1ZRDgEE', 
     'Cookie': 'dd_device_id_2=dx_a80138056180477d91faf475d13923f1; dd_device_id=dx_391c52cf8cea48e599b897eb990490fe; __cfduid=d4adcb8a9901b0958080b468449805fb11612432482; __cfduid=d0097d7c5bc2bd15284c899bfc8ca504b1613043461; __cf_bm=67832e9654f65d31b192dbf4e0095c289b0f4361-1614306414-1800-AXJka2Q7sx+2HjkgU2D99tHnAS1Y1BzVKyWuIgLYAHqgR1JG57a4ee3A6Rt8mSUgiArbHFXXuh9yMMWtOCSmyN0='
-  })
-  .send("{\"credentials\":{\"password\":\"Samarth16\",\"email\":\"dwoksaustin@digi-prex.com\"}}")
-  .end(function (res) { 
-    if (res.error) throw new Error(res.error); 
-    console.log(res.raw_body);
-  });
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
 
 
 // var axios = require('axios');

@@ -10,7 +10,7 @@ var axios = require('axios');
 // const OrderSchema = new Schema({}, { strict: false });
 // var devices = mongoose.model("devices", OrderSchema);
 
-var data = '{"credentials":{"password":"3739","email":"4124187161bu@ipad.doordash.com"}}';
+var data = '{"credentials":{"password":"Samarth16","email":"dwoksaustin@digi-prex.com"}}';
 let token;
 let syncingTime=180;
 async function delay(time) {

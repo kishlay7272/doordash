@@ -1,8 +1,6 @@
-var request = require('request');
-var options = {
-  'method': 'POST',
-  'url': 'https://identity.doordash.com/api/v1/auth/token',
-  'headers': {
+var unirest = require('unirest');
+var req = unirest('POST', 'https://identity.doordash.com/api/v1/auth/token')
+  .headers({
     'Authorization': 'Ft98fOkQwIcAAAAAAAAAANmMvfQvWUg8AAAAAAAAAACimJeZMkWvEwAAAAAAAAAA',
     'User-Agent': 'DoordashMerchant/2.61.1 (Android 8.1.0; unknown Custom)',
     'X-Device-Id': '418a448c7dd7a5be',
@@ -14,14 +12,13 @@ var options = {
     'Accept-Encoding': 'gzip, deflate',
     'X-NewRelic-ID': 'XAUEWF5SGwEJV1ZRDgEE',
     'Cookie': 'dd_device_id_2=dx_a80138056180477d91faf475d13923f1; dd_device_id=dx_391c52cf8cea48e599b897eb990490fe; __cfduid=d4adcb8a9901b0958080b468449805fb11612432482; __cfduid=d0097d7c5bc2bd15284c899bfc8ca504b1613043461; __cf_bm=67832e9654f65d31b192dbf4e0095c289b0f4361-1614306414-1800-AXJka2Q7sx+2HjkgU2D99tHnAS1Y1BzVKyWuIgLYAHqgR1JG57a4ee3A6Rt8mSUgiArbHFXXuh9yMMWtOCSmyN0='
-  },
-  body: '{"credentials":{"password":"Samarth16","email":"dwoksaustin@digi-prex.com"}}'
+  })
+  .send("{\"credentials\":{\"password\":\"Samarth16\",\"email\":\"dwoksaustin@digi-prex.com\"}}")
+  .end(function (res) { 
+    if (res.error) throw new Error(res.error); 
+    console.log(res.raw_body);
+  });
 
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.data);
-});
 
 // var axios = require('axios');
 // var dbConn_mongo = require('./mongo');

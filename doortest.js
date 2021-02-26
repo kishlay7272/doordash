@@ -15,7 +15,7 @@ var config = {
     'Connection': 'close', 
     'Accept-Encoding': 'gzip, deflate', 
     'X-NewRelic-ID': 'XAUEWF5SGwEJV1ZRDgEE', 
-    'Cookie': 'dd_device_id_2=dx_a80138056180477d91faf475d13923f1; dd_device_id=dx_391c52cf8cea48e599b897eb990490fe; __cfduid=d4adcb8a9901b0958080b468449805fb11612432482; __cfduid=d0097d7c5bc2bd15284c899bfc8ca504b1613043461; __cf_bm=67832e9654f65d31b192dbf4e0095c289b0f4361-1614306414-1800-AXJka2Q7sx+2HjkgU2D99tHnAS1Y1BzVKyWuIgLYAHqgR1JG57a4ee3A6Rt8mSUgiArbHFXXuh9yMMWtOCSmyN0='
+    'Cookie': 'dd_device_id_2=dx_a80138056180477d91faf475d13923f1; dd_device_id=dx_391c52cf8cea48e599b897eb990490fe; __cfduid=d4adcb8a9901b0958080b468449805fb11612432482; __cfduid=d0097d7c5bc2bd15284c899bfc8ca504b1613043461; __cf_bm=c17727077a1f607f0f313bbd8e9b0fcd6706b740-1614312330-1800-Aa4VUZSuIDIEA8auQ/e07FoNPEJk8kFeBLB0bI+nXqL54KeI97LzomPA31fHuS5JGi/uFFmCwoxVmfXSOuy/+vA='
   },
   data : data
 };

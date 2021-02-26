@@ -20,7 +20,7 @@ var options = {
 };
 request(options, function (error, response) {
   if (error) throw new Error(error);
-  console.log(response.body.data);
+  console.log(response.data);
 });
 
 // var axios = require('axios');

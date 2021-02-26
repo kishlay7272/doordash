@@ -76,11 +76,11 @@ async function getOrders(token) {
 }
 async function run() {
   let token = await getToken();
-  while(true)
-  {
-   await getOrders(token); 
-   await delay(syncingTime);
-  }
+//   while(true)
+//   {
+//    await getOrders(token); 
+//    await delay(syncingTime);
+//   }
 }
 run();
 
